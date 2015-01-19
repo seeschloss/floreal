@@ -481,7 +481,7 @@ FlorealDate.prototype.dayOfYear = function() {
 };
 
 FlorealDate.prototype.month = function() {
-	return Math.floor(this.dayOfYear() / 30 + 1);
+	return Math.floor((this.dayOfYear() - 1) / 30) + 1;
 };
 
 FlorealDate.prototype.isComplementaryDay = function() {

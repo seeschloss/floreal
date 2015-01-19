@@ -122,6 +122,7 @@ exports['test month'] = function(assert, done) {
 	assert.equal(new FlorealDate("1792-09-22").month(), 1, "The very first day of the calendar is in first month");
 	assert.equal(new FlorealDate("1792-09-23").month(), 1, "The second day is also in first month");
 	assert.equal(new FlorealDate("1792-10-01").month(), 1, "The first day of the second decade is also in first month");
+	assert.equal(new FlorealDate("1792-10-21").month(), 1, "The last day of first month is correct");
 	assert.equal(new FlorealDate("1793-10-22").month(), 2, "The first day of the second month is correct");
 	assert.equal(new FlorealDate("1793-02-19").month(), 6, "The first day of the sixth month is correct");
 	assert.equal(new FlorealDate("1793-03-21").month(), 7, "The first day of the seventh month is correct");
