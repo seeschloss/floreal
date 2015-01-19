@@ -1,13 +1,23 @@
 {
 	"name": "floreal",
 	"description": "Date formatting for the French Revolutionary calendar",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": {
 		"name": "Matthieu Valleton",
 		"email": "mvalleton@seos.fr",
 		"url": "http://ssz.fr"
 	},
 	"license": "MIT",
+	"keywords": [
+		"conversion",
+		"dates",
+		"calendar",
+		"history",
+		"historical",
+		"france",
+		"french",
+		"republic"
+	],
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/seeschloss/floreal"
