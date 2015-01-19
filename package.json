@@ -1,0 +1,25 @@
+{
+	"name": "floreal",
+	"description": "Date formatting for the French Revolutionary calendar",
+	"version": "1.0.0",
+	"author": {
+		"name": "Matthieu Valleton",
+		"email": "mvalleton@seos.fr",
+		"url": "http://ssz.fr"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/seeschloss/floreal"
+	},
+	"main": "floreal.js",
+	"scripts": {
+		"test": "node test/all.js"
+	},
+	"dependencies": {
+		"roman-numerals": "^0.3.2"
+	},
+	"devDependencies": {
+		"test": ">=0.0.5"
+	}
+}
