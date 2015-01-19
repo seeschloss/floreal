@@ -105,12 +105,12 @@ will output:
 Returns the (French) name of the month, in all lower case, or an empty string for complementary days.
 
     var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).monthName());
-    console.log('%s', (new Floreal("1800-09-20")).monthName());
+    console.log('"%s"', (new Floreal("1799-11-09")).monthName());
+    console.log('"%s"', (new Floreal("1800-09-20")).monthName());
 will output:
 
-    brumaire
-    &nbsp;
+    "brumaire"
+    ""
 
 ### floreal.Date.dayOfMonth() ###
 ### floreal.Date.day() ###
