@@ -54,25 +54,25 @@ exports['test year'] = function(assert, done) {
 	done();
 };
 
-exports['test sextileYear'] = function(assert, done) {
-	assert.equal(+new FlorealDate("1792-09-22").sextileYear(), false, "Year I is not sextile");
-	assert.equal(+new FlorealDate("1793-09-22").sextileYear(), false, "Year II is not sextile");
-	assert.equal(+new FlorealDate("1794-09-22").sextileYear(), true, "Year III is sextile");
-	assert.equal(+new FlorealDate("1795-09-23").sextileYear(), false, "Year IV is not sextile");
-	assert.equal(+new FlorealDate("1796-09-22").sextileYear(), false, "Year V is not sextile");
-	assert.equal(+new FlorealDate("1797-09-22").sextileYear(), false, "Year VI is not sextile");
-	assert.equal(+new FlorealDate("1798-09-22").sextileYear(), true, "Year VII is sextile");
-	assert.equal(+new FlorealDate("1799-09-23").sextileYear(), false, "Year VIII is not sextile");
-	assert.equal(+new FlorealDate("1800-09-23").sextileYear(), false, "Year XI is not sextile");
-	assert.equal(+new FlorealDate("1801-09-23").sextileYear(), false, "Year X is not sextile");
-	assert.equal(+new FlorealDate("1802-09-23").sextileYear(), true, "Year XI is sextile");
-	assert.equal(+new FlorealDate("1803-09-24").sextileYear(), false, "Year XII is not sextile");
-	assert.equal(+new FlorealDate("1804-09-23").sextileYear(), false, "Year XIII is not sextile");
-	assert.equal(+new FlorealDate("1805-09-23").sextileYear(), false, "Year XIV is not sextile");
-	assert.equal(+new FlorealDate("1870-09-23").sextileYear(), false, "Year LXXIX is not sextile");
-	assert.equal(+new FlorealDate("2013-09-21").sextileYear(), false, "Year CCXXII is not sextile");
-	assert.equal(+new FlorealDate("2014-09-21").sextileYear(), false, "Year CCXXIII is not sextile");
-	assert.equal(+new FlorealDate("2015-09-21").sextileYear(), false, "Year CCXXIV is sextile");
+exports['test isYearSextile'] = function(assert, done) {
+	assert.equal(+new FlorealDate("1792-09-22").isYearSextile(), false, "Year I is not sextile");
+	assert.equal(+new FlorealDate("1793-09-22").isYearSextile(), false, "Year II is not sextile");
+	assert.equal(+new FlorealDate("1794-09-22").isYearSextile(), true, "Year III is sextile");
+	assert.equal(+new FlorealDate("1795-09-23").isYearSextile(), false, "Year IV is not sextile");
+	assert.equal(+new FlorealDate("1796-09-22").isYearSextile(), false, "Year V is not sextile");
+	assert.equal(+new FlorealDate("1797-09-22").isYearSextile(), false, "Year VI is not sextile");
+	assert.equal(+new FlorealDate("1798-09-22").isYearSextile(), true, "Year VII is sextile");
+	assert.equal(+new FlorealDate("1799-09-23").isYearSextile(), false, "Year VIII is not sextile");
+	assert.equal(+new FlorealDate("1800-09-23").isYearSextile(), false, "Year XI is not sextile");
+	assert.equal(+new FlorealDate("1801-09-23").isYearSextile(), false, "Year X is not sextile");
+	assert.equal(+new FlorealDate("1802-09-23").isYearSextile(), true, "Year XI is sextile");
+	assert.equal(+new FlorealDate("1803-09-24").isYearSextile(), false, "Year XII is not sextile");
+	assert.equal(+new FlorealDate("1804-09-23").isYearSextile(), false, "Year XIII is not sextile");
+	assert.equal(+new FlorealDate("1805-09-23").isYearSextile(), false, "Year XIV is not sextile");
+	assert.equal(+new FlorealDate("1870-09-23").isYearSextile(), false, "Year LXXIX is not sextile");
+	assert.equal(+new FlorealDate("2013-09-21").isYearSextile(), false, "Year CCXXII is not sextile");
+	assert.equal(+new FlorealDate("2014-09-21").isYearSextile(), false, "Year CCXXIII is not sextile");
+	assert.equal(+new FlorealDate("2015-09-21").isYearSextile(), false, "Year CCXXIV is sextile");
 
 	done();
 };

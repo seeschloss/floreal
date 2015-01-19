@@ -373,7 +373,7 @@ var is_year_sextile = function(year) {
 		default:
 			return year > 14 && (
 					(year % 4 == 0 && (year + 1792) % 100 != 0)
-					|| (year + 1792) % 400 == 0
+					|| ((year + 1792) % 400 == 0 && (year + 1792) % 4000 != 0)
 				);
 
 	}
@@ -466,7 +466,7 @@ FlorealDate.prototype.year = function() {
 	}
 };
 
-FlorealDate.prototype.sextileYear = function() {
+FlorealDate.prototype.isYearSextile = function() {
 	return is_year_sextile(this.yearDecimal());
 };
 
@@ -560,10 +560,13 @@ FlorealDate.prototype.decade = function() {
 
 
 FlorealDate.prototype.toFullDateString = function() {
+	var day = this.day();
+
 	if (this.isComplementaryDay()) {
-		return ordinal_string(this.day()) + " jour complémentaire, an " + this.year();
+		return ordinal_string(day) + " jour complémentaire, an " + this.year();
 	} else {
-		return ordinal_string(this.day()) + " " + this.monthName() + ", an " + this.year();
+		var day_string = day == 1 ? '1er' : day;
+		return day_string + " " + this.monthName() + ", an " + this.year();
 	}
 };
 
@@ -576,6 +579,8 @@ FlorealDate.prototype.toShortDateString = function() {
 	return pad_left(this.day()) + "-" + pad_left(this.month()) + "-" + this.year();
 };
 FlorealDate.prototype.toDateString = FlorealDate.prototype.toShortDateString;
+
+FlorealDate.prototype.toString = FlorealDate.prototype.toFullDateString;
 
 module.exports = FlorealDate;
 

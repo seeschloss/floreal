@@ -1,7 +1,7 @@
 {
 	"name": "floreal",
 	"description": "Date formatting for the French Revolutionary calendar",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": {
 		"name": "Matthieu Valleton",
 		"email": "mvalleton@seos.fr",
