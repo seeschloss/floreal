@@ -280,3 +280,37 @@ exports['test dayTitle'] = function(assert, done) {
 	done();
 };
 
+exports['test setYear'] = function(assert, done) {
+	assert.equal(new FlorealDate("1795-08-18").setYear("XVI").year(), "XVI", "Year was correctly set");
+
+	done();
+};
+
+exports['test setYearDecimal'] = function(assert, done) {
+	assert.equal(new FlorealDate("1795-08-18").setYearDecimal(16).year(), "XVI", "Year was correctly set");
+
+	done();
+};
+
+exports['test setMonth'] = function(assert, done) {
+	assert.equal(new FlorealDate("1795-08-18").setMonth(1).month(), 1, "Month was correctly set");
+	assert.equal(new FlorealDate("1795-08-18").setMonth(0).month(), 13, "Month #0 is complementary days");
+	assert.equal(new FlorealDate("1795-08-18").setMonth(13).month(), 13, "Month #13 is also complementary days");
+
+	done();
+};
+
+exports['test setDay'] = function(assert, done) {
+	assert.equal(new FlorealDate("1795-08-18").setDay(1).dayOfMonth(), 1, "Day was correctly set");
+	assert.equal(new FlorealDate("1795-08-18").setDay(30).dayOfMonth(), 30, "Day was correctly set");
+
+	done();
+};
+
+exports['test setDate'] = function(assert, done) {
+	assert.equal(new FlorealDate().setDate(11, 13, 6).toShortDateString(), "06-13-XI", "Date was correctly set");
+	assert.equal(new FlorealDate().setDate(223, 5, 7).toShortDateString(), "07-05-CCXXIII", "Date was correctly set");
+
+	done();
+};
+

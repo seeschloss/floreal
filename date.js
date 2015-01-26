@@ -70,11 +70,47 @@ var pad_left = function(number) {
 	return number < 10 ? "0" + number : "" + number;
 };
 
-var FlorealDate = function(arg) {
-	this.date = new Date(arg);
-	this.reference = new Date('1792-09-22');
+var republicReference = new Date('1792-09-22');
 
-	this.revolutionaryTimestamp = this.date - this.reference;
+var FlorealDate = function(arg) {
+	if (arg) {
+		this.date = new Date(arg);
+	} else {
+		this.date = new Date();
+	}
+
+	this.revolutionaryTimestamp = this.date - republicReference;
+};
+
+FlorealDate.prototype.setDate = function(year, month, day) {
+	var gregorianDate = first_day_of_year(year);
+
+	// Allow using 0 as the month for complementary days
+	month = month > 0 ? month : 13;
+
+	var day_of_republican_year = 30 * (month-1) + day;
+
+	gregorianDate.setDate(gregorianDate.getDate() + day_of_republican_year - 1);
+
+	this.date = gregorianDate;
+
+	return this;
+};
+
+FlorealDate.prototype.setYear = function(year) {
+	return this.setDate(roman.toArabic(year), this.month(), this.dayOfMonth());
+};
+
+FlorealDate.prototype.setYearDecimal = function(year) {
+	return this.setDate(year, this.month(), this.dayOfMonth());
+};
+
+FlorealDate.prototype.setMonth = function(month) {
+	return this.setDate(this.yearDecimal(), month, this.dayOfMonth());
+};
+
+FlorealDate.prototype.setDay = function(day) {
+	return this.setDate(this.yearDecimal(), this.month(), day);
 };
 
 FlorealDate.day_names = day_names;

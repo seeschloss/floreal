@@ -11,7 +11,7 @@ Using npm:
 ## Usage ##
 
 ### new floreal.Date(timespec) ###
-Uses the native JavaScript Date object to parse *timespec* and takes any correctly formatted date.
+Uses the native JavaScript Date object to parse *timespec* and takes any correctly formatted date. An `undefined` timespec means today.
 
     var Floreal = require('floreal').Date;
     var coup = new Floreal("1799-11-09");
@@ -38,6 +38,32 @@ Returns the full date in short form as "[day number]-[month number]-[year in rom
 will output:
 
     18-02-VIII
+
+### floreal.Date.setYear(year) ###
+Sets Republican year for the date *in roman numerals*
+
+### floreal.Date.setYearDecimal(year) ###
+Sets Republican year for the date in arabic numerals
+
+### floreal.Date.setMonth(month) ###
+Sets Republican month for the date. Month 1 is vendémiaire, both 0 and 13 represent complementary days.
+
+### floreal.Date.setDay(day) ###
+Sets Republican day for the date, first day of the month is 1.
+
+### floreal.Date.setDate(year, month, day) ###
+Sets the full Republican date.
+
+    var Floreal = require('floreal').Date;
+    var date = new Floreal();
+    date.setDate(8, 2, 18);
+    console.log('%s', date.toFullDateString());
+will output:
+
+    18 brumaire, an VIII
+
+### floreal.Date.setMonth(month) ###
+### floreal.Date.setDay(day) ###
 
 ### floreal.Date.year() ###
 ### floreal.Date.yearDecimal() ###
