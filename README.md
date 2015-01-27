@@ -13,9 +13,11 @@ Using npm:
 ### new floreal.Date(timespec) ###
 Uses the native JavaScript Date object to parse *timespec* and takes any correctly formatted date. An `undefined` timespec means today.
 
-    var Floreal = require('floreal').Date;
-    var coup = new Floreal("1799-11-09");
-    console.log('%s', coup);
+```javascript
+var Floreal = require('floreal').Date;
+var coup = new Floreal("1799-11-09");
+console.log('%s', coup);
+```
 will output:
 
     18 brumaire, an VIII
@@ -24,6 +26,7 @@ will output:
 ### floreal.Date.toFullDateString() ###
 Returns the full date in long form as "[day number] [month name], an [year in roman numerals]"
 
+```javascript
     var Floreal = require('floreal').Date;
     console.log('%s', (new Floreal("1799-10-11")).toFullDateString());
 will output:
