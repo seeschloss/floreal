@@ -27,8 +27,9 @@ will output:
 Returns the full date in long form as "[day number] [month name], an [year in roman numerals]"
 
 ```javascript
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-10-11")).toFullDateString());
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-10-11")).toFullDateString());
+```
 will output:
 
     18 brumaire, an VIII
@@ -36,8 +37,11 @@ will output:
 ### floreal.Date.toShortDateString() ###
 Returns the full date in short form as "[day number]-[month number]-[year in roman numerals]"
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-10-11")).toShortDateString());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-10-11")).toShortDateString());
+```
+
 will output:
 
     18-02-VIII
@@ -57,10 +61,12 @@ Sets Republican day for the date, first day of the month is 1.
 ### floreal.Date.setDate(year, month, day) ###
 Sets the full Republican date.
 
-    var Floreal = require('floreal').Date;
-    var date = new Floreal();
-    date.setDate(8, 2, 18);
-    console.log('%s', date.toFullDateString());
+```javascript
+var Floreal = require('floreal').Date;
+var date = new Floreal();
+date.setDate(8, 2, 18);
+console.log('%s', date.toFullDateString());
+```
 will output:
 
     18 brumaire, an VIII
@@ -72,10 +78,12 @@ will output:
 ### floreal.Date.yearDecimal() ###
 Displays year of the Republic as roman numerals or as a decimal number
 
-    var Floreal = require('floreal').Date;
-    var coup = new Floreal("1799-11-09");
-    console.log('%s', coup.year());
-    console.log('%s', coup.yearDecimal());
+```javascript
+var Floreal = require('floreal').Date;
+var coup = new Floreal("1799-11-09");
+console.log('%s', coup.year());
+console.log('%s', coup.yearDecimal());
+```
 will output:
 
     VIII
@@ -84,9 +92,11 @@ will output:
 ### floreal.Date.isYearSextile() ###
 Returns true if year is sextile, using actual sextile years for years I to XVI, and [Romme system](http://gallica.bnf.fr/ark:/12148/bpt6k826927/f328.image.r) for subsequent years.
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).isYearSextile());
-    console.log('%s', (new Floreal("1803-08-18")).isYearSextile());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).isYearSextile());
+console.log('%s', (new Floreal("1803-08-18")).isYearSextile());
+```
 will output:
 
     false
@@ -95,9 +105,11 @@ will output:
 ### floreal.Date.firstDayOfYear() ###
 Returns the first day of the Republican year as a JavaScript Date object.
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).firstDayOfYear().toDateString());
-    console.log('%s', (new Floreal("1803-08-18")).firstDayOfYear().toDateString());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).firstDayOfYear().toDateString());
+console.log('%s', (new Floreal("1803-08-18")).firstDayOfYear().toDateString());
+```
 will output:
 
     Mon Sep 23 1799
@@ -106,8 +118,10 @@ will output:
 ### floreal.Date.dayOfYear() ###
 Returns the day number within the year (from 1 to 365, or 366 for sextile years).
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).dayOfYear());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).dayOfYear());
+```
 will output:
 
     48
@@ -115,8 +129,10 @@ will output:
 ### floreal.Date.month() ###
 Returns the month number within the year. Complementary days are technically not part of any month, but for practical purposes are considered part of the 13th month.
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).month());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).month());
+```
 will output:
 
     2
@@ -124,8 +140,10 @@ will output:
 ### floreal.Date.isComplementaryDay() ###
 Whether the day is a complementary day&mdash;the five or six days at the end of the year which are not part of any month.
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1800-09-20")).isComplementaryDay());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1800-09-20")).isComplementaryDay());
+```
 will output:
 
     true
@@ -133,9 +151,11 @@ will output:
 ### floreal.Date.monthName() ###
 Returns the (French) name of the month, in all lower case, or an empty string for complementary days.
 
-    var Floreal = require('floreal').Date;
-    console.log('"%s"', (new Floreal("1799-11-09")).monthName());
-    console.log('"%s"', (new Floreal("1800-09-20")).monthName());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('"%s"', (new Floreal("1799-11-09")).monthName());
+console.log('"%s"', (new Floreal("1800-09-20")).monthName());
+```
 will output:
 
     "brumaire"
@@ -145,9 +165,11 @@ will output:
 ### floreal.Date.day() ###
 Returns the day number within its month, from 1 to 30 (1 to 6 for complementary days).
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).dayOfMonth());
-    console.log('%s', (new Floreal("1800-09-20")).dayOfMonth());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).dayOfMonth());
+console.log('%s', (new Floreal("1800-09-20")).dayOfMonth());
+```
 will output:
 
     18
@@ -157,9 +179,11 @@ will output:
 ### floreal.Date.dayOfWeek() ###
 Returns the day number within its decade, from 1 to 10 (1 to 6 for complementary days).
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).dayOfDecade());
-    console.log('%s', (new Floreal("1800-09-20")).dayOfDecade());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).dayOfDecade());
+console.log('%s', (new Floreal("1800-09-20")).dayOfDecade());
+```
 will output:
 
     8
@@ -168,9 +192,11 @@ will output:
 ### floreal.Date.decade() ###
 Returns the decade number within the month, from 1 to 3 (complementary days are reported as belonging to first decade).
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).decade());
-    console.log('%s', (new Floreal("1800-09-20")).decade());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).decade());
+console.log('%s', (new Floreal("1800-09-20")).decade());
+```
 will output:
 
     2
@@ -179,8 +205,10 @@ will output:
 ### floreal.Date.dayName() ###
 Returns the name of the day (primidi, duodi... equivalent to monday, tuesday...). Complementary days have a different naming scheme and are named "jour de la vertu", "jour du génie", etc.
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-11-09")).dayName());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-11-09")).dayName());
+```
 will output:
 
     octidi
@@ -188,8 +216,10 @@ will output:
 ### floreal.Date.dayTitle() ###
 Returns the French name of the object associated with the day (like saints on Christian calendars).
 
-    var Floreal = require('floreal').Date;
-    console.log('%s', (new Floreal("1799-10-11")).dayTitle());
+```javascript
+var Floreal = require('floreal').Date;
+console.log('%s', (new Floreal("1799-10-11")).dayTitle());
+```
 will output:
 
     tournesol
